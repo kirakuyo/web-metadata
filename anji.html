@@ -1142,7 +1142,7 @@
                                                         handleFiles(Array.from(e.target.files));
                                                     }
                                                     function handleFiles(files) {
-                                                        uploadedFiles = Array.from(files).slice(0, 10).filter(file => file.type.startsWith("image/"));
+                                                        uploadedFiles = Array.from(files).slice(0, 1).filter(file => file.type.startsWith("image/"));
                                                         imagePreview.innerHTML = "";
                                                         uploadedFiles.forEach(file => {
                                                             const img = document.createElement("img");
