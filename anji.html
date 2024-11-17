@@ -1096,7 +1096,7 @@
                                                             Buat Api Key Gratis Anda di <a href="https://makersuite.google.com/app/apikey" target="_blank" rel="noopener noreferrer">Google Gemini AI</a>
                                                         </p>
                                                         <div class="api-key-input">
-                                                            <input type="password" id="apiKeyInput" placeholder="Input Api Key Anda">
+                                                            <input type="text" id="apiKeyInput" placeholder="Input Api Key Anda">
                                                         </div>
                                                         <button id="saveApiKey" class="button" style="margin-top: 1rem; width: 100%; max-width: 400px;">Simpan</button>
                                                         <div id="apiKeyStatus"></div>
@@ -1192,7 +1192,7 @@
                                                         }
                                                     }
                                                     document.addEventListener('DOMContentLoaded', () => {
-                                                        const savedApiKey = localStorage.getItem('geminiApiKey') || 'AIzaSyA2EQaTIOe6ZCamKLbvzhW-q4wf3fOyNUc';
+                                                        const savedApiKey = localStorage.getItem('geminiApiKey') || '';
                                                         if (savedApiKey) {
                                                             apiKeyInput.value = savedApiKey;
                                                             saveApiKey();
