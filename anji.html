@@ -1233,7 +1233,7 @@
                                                     );
                                                     async function generateMetadata(fileData, fileType) {
                                                         const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent`;
-                                                        const prompt = `Analyze this image and generate:\n1. A good title contains exactly 15 words related to the image and avoids commas.\n2. A detailed description of the image content is a maximum of 200 characters.\n3. 50 relevant single-word keywords related to the image and title topics.\n\nRespond in the following JSON format:\n{\n  "title": "Your 15-word title here",\n  "description": "Your 200-character detailed description here",\n  "keywords": ["keyword1", "keyword2", ..., "keyword50"]\n}`;
+                                                        const prompt = `Analyze this image and generate:\n1. A good title contains exactly 15 words related to the image.\n2. A detailed description of the image content is a maximum of 200 characters.\n3. 50 relevant single-word keywords related to the image and title topics.\n\nRespond in the following JSON format:\n{\n  "title": "Your 15-word title here",\n  "description": "Your 200-character detailed description here",\n  "keywords": ["keyword1", "keyword2", ..., "keyword50"]\n}`;
                                                         const MAX_RETRIES = 3;
                                                         const INITIAL_RETRY_DELAY = 500;
                                                         const MAX_RETRY_DELAY = 32000;
