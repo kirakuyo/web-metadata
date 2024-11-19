@@ -1281,7 +1281,7 @@
                                                                     throw new Error('Missing required metadata fields');
                                                                 }
                                                                 return {
-                                                                    title: removeSpecialCharacters(metadata.title).slice(0, 120),
+                                                                    title: removeSpecialCharacters(metadata.title).slice(0, 100),
                                                                     description: removeSpecialCharacters(metadata.description).slice(0, 200),
                                                                     keywords: (metadata.keywords || []).map(k => removeSpecialCharacters(k)).filter(k => k).slice(0, 50)
                                                                 };
