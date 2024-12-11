@@ -15,6 +15,7 @@
     // Initiate the wowjs
     new WOW().init();
 
+
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
@@ -27,13 +28,11 @@
 
     // Hero Header carousel
     $(".header-carousel").owlCarousel({
-        animateOut: 'fadeOut',
+        animateOut: 'slideOutDown',
         items: 1,
-        margin: 0,
-        stagePadding: 0,
         autoplay: true,
-        smartSpeed: 500,
-        dots: true,
+        smartSpeed: 1000,
+        dots: false,
         loop: true,
         nav : true,
         navText : [
@@ -43,81 +42,57 @@
     });
 
 
-    // attractions carousel
-    $(".blog-carousel").owlCarousel({
+    // International carousel
+    $(".testimonial-carousel").owlCarousel({
         autoplay: true,
+        items: 1,
         smartSpeed: 1500,
-        center: false,
-        dots: false,
+        dots: true,
+        dotsData: true,
         loop: true,
         margin: 25,
         nav : true,
         navText : [
-            '<i class="fa fa-angle-right"></i>',
-            '<i class="fa fa-angle-left"></i>'
-        ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:2
-            },
-            1200:{
-                items:3
-            }
-        }
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
+        ]
+    });
+
+
+    // Modal Video
+    $(document).ready(function () {
+        var $videoSrc;
+        $('.btn-play').click(function () {
+            $videoSrc = $(this).data("src");
+        });
+        console.log($videoSrc);
+
+        $('#videoModal').on('shown.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+        })
+
+        $('#videoModal').on('hide.bs.modal', function (e) {
+            $("#video").attr('src', $videoSrc);
+        })
     });
 
 
     // testimonial carousel
     $(".testimonial-carousel").owlCarousel({
         autoplay: true,
-        smartSpeed: 1500,
-        center: false,
+        smartSpeed: 1000,
+        center: true,
         dots: true,
         loop: true,
-        margin: 25,
         nav : true,
         navText : [
-            '<i class="fa fa-angle-right"></i>',
-            '<i class="fa fa-angle-left"></i>'
+            '<i class="bi bi-arrow-left"></i>',
+            '<i class="bi bi-arrow-right"></i>'
         ],
-        responsiveClass: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:2
-            },
-            1200:{
-                items:3
-            }
-        }
     });
 
-
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 5,
-        time: 2000
-    });
-
-
+    
+    
    // Back to top button
    $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -131,6 +106,26 @@
         return false;
     });
 
+
+    function myMove() {
+        let id = null;
+        const elem = document.getElementById("animate");   
+        let pos = 0;
+        clearInterval(id);
+        id = setInterval(frame, 5);
+        function frame() {
+          if (pos == 350) {
+            clearInterval(id);
+          } else {
+            pos++; 
+            elem.style.top = pos + "px"; 
+            elem.style.left = pos + "px"; 
+          }
+        }
+      }
+
+
+   
 
 })(jQuery);
 
